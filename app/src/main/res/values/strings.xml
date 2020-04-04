@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Task5</string>
+
+    <string-array name="listArray">
+        <item>Choice 1</item>
+        <item>Choice 2</item>
+        <item>Choice 3</item>
+        <item>Choice 4</item>
+        <item>Choice 5</item>
+    </string-array>
+</resources>
