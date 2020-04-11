@@ -20,9 +20,10 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView textView;
+
     private ListView itemList;
     ArrayList<Item> items;
+    //Adapter for ListView
     private Adapter adapter;
 
 
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         items = new ArrayList<>();
 
 
+        //Adding items to list
         items.add(new Item("Item #1"));
         items.add(new Item("Item #2"));
         items.add(new Item("Item #3"));
@@ -43,19 +45,17 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        textView = findViewById(R.id.choice);
-
-
         adapter = new Adapter(this, R.layout.item_layout, items);
 
 
         itemList.setAdapter(adapter);
 
-
+        //Setting ClickListener
         itemList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 TextView textView = view.findViewById(R.id.choice);
+                //Opens a dialog with choices
                 Dialog alertDialog = onCreateDialog(MainActivity.this, textView);
                 alertDialog.show();
             }
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
     public Dialog onCreateDialog(Context context, final TextView v) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
 
-
+        //Array with variants of choice
         final String[] arr = {"1", "2", "3", "4", "5"};
 
         builder.setTitle("Choose an item")

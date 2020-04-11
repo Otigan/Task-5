@@ -23,7 +23,6 @@ public class Adapter extends BaseAdapter {
 
     }
 
-
     @Override
     public int getCount() {
         return arrayList.size();
@@ -46,6 +45,7 @@ public class Adapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         final ViewHolder viewHolder;
+
         if (convertView == null) {
             viewHolder = new ViewHolder();
             LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);

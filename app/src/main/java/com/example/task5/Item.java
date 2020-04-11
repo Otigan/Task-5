@@ -1,5 +1,7 @@
 package com.example.task5;
 
+
+//Simple item model
 public class Item {
 
     private String title;
